@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // === GALLERY ===
   const galleryContainer = document.getElementById("gallery-container");
   if (galleryContainer) {
-    const imageFiles = ["01.jpg","02.jpg","03.jpg","05.jpg","06.webp"]; //file name of pic
-    const basePath = "../../assets/img/boxes/wine/wine-tasting/"; //path pic
+    const imageFiles = ["01.jpg","02.jpg","03.jpg", "04.jpg","05.jpg"]; //file name of pic
+    const basePath = "../../../assets/img/boxes/wine/fill-bottle/il-santo-vino/"; //path pic
     const images = imageFiles.map(f => basePath + f);
 //cambiare alt name linea 14
     galleryContainer.innerHTML = `
@@ -163,4 +163,65 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     lastY = y;
   });
+});
+
+/* === License JS link flaticon scomparsa === */
+
+document.addEventListener("DOMContentLoaded", function () {
+  // === WINE MENU TOGGLE ===
+  const menuToggleBtn = document.querySelector('button .license-btn') || document.querySelector('.license-btn');
+  const menuBox = document.getElementById("content-menu");
+  const menuArrow = document.getElementById("arrow-menu");
+  const menuToggleText = document.getElementById("toggle-text-menu");
+
+  if (menuToggleBtn && menuBox && menuArrow && menuToggleText) {
+    menuToggleBtn.addEventListener("click", function () {
+      const isVisible = menuBox.offsetParent !== null;
+
+      // Alterno visibilità del box
+      menuBox.style.display = isVisible ? "none" : "block";
+
+      // Cambio testo del bottone in base allo stato
+      if (!menuToggleText.dataset.original) {
+        menuToggleText.dataset.original = menuToggleText.textContent;
+      }
+      menuToggleText.textContent = isVisible 
+        ? menuToggleText.dataset.original 
+        : "Hide Wine Menu";
+
+      // Cambio la classe della freccia per ruotarla
+      menuArrow.classList.remove("arrow-up", "arrow-down");
+      menuArrow.classList.add(isVisible ? "arrow-down" : "arrow-up");
+    });
+  }
+
+  // === ATTRIBUTION TOGGLE (originale) ===
+  const toggleBtn = document.getElementById("toggle-attribution");
+  const box = document.getElementById("attribution-box");
+  const source = document.getElementById("flaticon-links");
+  const arrowIcon = document.getElementById("arrow-icon");
+  const toggleText = document.getElementById("toggle-text");
+
+  if (toggleBtn && box && source && arrowIcon && toggleText) {
+    toggleBtn.addEventListener("click", function () {
+      const isVisible = box.offsetParent !== null;
+
+      // Carico il contenuto solo la prima volta che mostro il box
+      if (!isVisible && box.innerHTML.trim() === "") {
+        box.innerHTML = source.innerHTML;
+      }
+
+      // Alterno visibilità del box
+      box.style.display = isVisible ? "none" : "block";
+
+      // Cambio testo del bottone in base allo stato
+      toggleText.textContent = isVisible
+        ? "Show icon credits"
+        : "Hide source links";
+
+      // Cambio la classe della freccia per ruotarla
+      arrowIcon.classList.remove("arrow-up", "arrow-down");
+      arrowIcon.classList.add(isVisible ? "arrow-down" : "arrow-up");
+    });
+  }
 });

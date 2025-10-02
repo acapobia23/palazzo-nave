@@ -9,17 +9,18 @@
     color: #555454;
   }
   
-  .banner {
-    background: url('../assets/img/headers/wdl-onlylogo.jpg') no-repeat center center;
-    background-size: cover;
-    background-position: center bottom;
-    width: 100%;
-    height: 250px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    border-radius: 0 0 4.2% 4.2%;
-  }
+.banner {
+  background: url('../assets/img/headers/logo-grillo-02.png') no-repeat center bottom;
+  background-size: 95% auto; /* rimpicciolisce un po’ l’immagine per lasciare spazio */
+  background-position: center bottom;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  border-radius: 0 0 4.2% 4.2%;
+}
+
   
   .grid-item {
     height: 100%; /* prende sempre tutta l'altezza disponibile dal .col */
@@ -28,7 +29,7 @@
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
-    border: 3px solid #3BD2C9;
+    border: 3px solid #d15e14;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +47,7 @@
     border-radius:  80px;
     padding: 20px;
     box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
-    border: 3px solid #3BD2C9;
+    border: 3px solid #d15e14;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -187,7 +188,7 @@
 
 .typerest {
   font-size: 20px;
-  color: #3BD2C9;
+  color: #d15e14;
   font-style: italic;
 }
 
@@ -262,8 +263,8 @@
 .license-btn {
   width: 100%;
   background-color: white;
-  border: 2px solid #3BD2C9;
-  color: #3BD2C9;
+  border: 2px solid #d15e14;
+  color: #d15e14;
   font-weight: bold;
   padding: 14px 20px;
   font-size: 16px;
@@ -279,15 +280,15 @@
 /* ✅ Colori FISSI */
 #toggle-attribution {
   background-color: white;
-  color: #3BD2C9;
-  border: 2px solid #3BD2C9;
+  color: #d15e14;
+  border: 2px solid #d15e14;
 }
 
 /* ✅ Hover con contrasto visibile */
 #toggle-attribution:hover {
-  border: 2px solid #3BD2C9;
+  border: 2px solid #d15e14;
   background-color: white;
-  color: #3BD2C9;
+  color: #d15e14;
 }
 
 /* ✅ Testo flessibile senza allargare bottone */
@@ -321,7 +322,7 @@
   border-radius: 20px; /* come i bottoni */
   margin-top: 10px;
   font-family: Arial, sans-serif;
-  border: 2px solid #3BD2C9; /* aggiunge il bordo come i bottoni */
+  border: 2px solid #d15e14; /* aggiunge il bordo come i bottoni */
   box-sizing: border-box;
 }
 
@@ -349,8 +350,8 @@
 .toggle-btn {
   width: 100%;
   background-color: white;
-  border: 2px solid #3BD2C9;
-  color: #3BD2C9;
+  border: 2px solid #d15e14;
+  color: #d15e14;
   font-weight: bold;
   padding: 14px 20px;
   font-size: 16px;
@@ -366,8 +367,8 @@
 /* Hover bottone */
 .toggle-btn:hover {
   background-color: white;
-  color: #3BD2C9;
-  border: 2px solid #3BD2C9;
+  color: #d15e14;
+  border: 2px solid #d15e14;
 }
 
 /* Icona che ruota */

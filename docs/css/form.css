@@ -182,7 +182,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   width: 100%;
   padding: 12px;
   margin-bottom: 12px;
-  border: 1px solid #3BD2C9;
+  border: 1px solid #d15e14;
   border-radius: 20px;
   font-size: 14px;
   background-color: white;
@@ -210,7 +210,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 .whatsapp-btn,
 .email-btn {
   width: 100%;
-  background-color: #3BD2C9;
+  background-color: #d15e14;
   border: none;
   color: white;
   font-weight: bold;
@@ -287,7 +287,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 /* Header: mese + anno */
 .pika-title {
   background-color: white;
-  color: #3BD2C9;
+  color: #d15e14;
   border-radius: 12px 12px 0 0;
   padding: 8px 0;
   font-weight: 600;
@@ -310,21 +310,21 @@ h1, h2, h3, h4, h5, h6, a, button {
 
 /* Giorno selezionato */
 .pika-single .is-selected .pika-button {
-  background: #3BD2C9;
+  background: #d15e14;
   color: white;
   border-radius: 8px;
 }
 
 /* Giorno attivo (oggi) */
 .pika-single .is-today .pika-button {
-  color: #3BD2C9;
+  color: #d15e14;
   font-weight: bold;
-  border-bottom: 2px solid #3BD2C9;
+  border-bottom: 2px solid #d15e14;
 }
 
 /* Disabilita hover su mobile (facoltativo: safe per mobile-first) */
 .pika-button:hover {
-  background: #3BD2C9;
+  background: #d15e14;
   color: white;
 }
 
@@ -369,8 +369,8 @@ h1, h2, h3, h4, h5, h6, a, button {
 .license-btn {
   width: 100%;
   background-color: white;
-  border: 2px solid #3BD2C9;
-  color: #3BD2C9;
+  border: 2px solid #d15e14;
+  color: #d15e14;
   font-weight: bold;
   padding: 14px 20px;
   font-size: 16px;
@@ -386,15 +386,15 @@ h1, h2, h3, h4, h5, h6, a, button {
 /* ✅ Colori FISSI */
 #toggle-attribution {
   background-color: white;
-  color: #3BD2C9;
-  border: 2px solid #3BD2C9;
+  color: #d15e14;
+  border: 2px solid #d15e14;
 }
 
 /* ✅ Hover con contrasto visibile */
 #toggle-attribution:hover {
-  border: 2px solid #3BD2C9;
+  border: 2px solid #d15e14;
   background-color: white;
-  color: #3BD2C9;
+  color: #d15e14;
 }
 
 /* ✅ Testo flessibile senza allargare bottone */
@@ -428,7 +428,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   border-radius: 20px; /* come i bottoni */
   margin-top: 10px;
   font-family: Arial, sans-serif;
-  border: 2px solid #3BD2C9; /* aggiunge il bordo come i bottoni */
+  border: 2px solid #d15e14; /* aggiunge il bordo come i bottoni */
   box-sizing: border-box;
 }
 
@@ -456,8 +456,8 @@ h1, h2, h3, h4, h5, h6, a, button {
 .toggle-btn {
   width: 100%;
   background-color: white;
-  border: 2px solid #3BD2C9;
-  color: #3BD2C9;
+  border: 2px solid #d15e14;
+  color: #d15e14;
   font-weight: bold;
   padding: 14px 20px;
   font-size: 16px;
@@ -473,8 +473,8 @@ h1, h2, h3, h4, h5, h6, a, button {
 /* Hover bottone */
 .toggle-btn:hover {
   background-color: white;
-  color: #3BD2C9;
-  border: 2px solid #3BD2C9;
+  color: #d15e14;
+  border: 2px solid #d15e14;
 }
 
 /* Icona che ruota */
@@ -494,21 +494,21 @@ h1, h2, h3, h4, h5, h6, a, button {
 
 #menu-toggle-btn {
   background-color: white;
-  color: #3BD2C9;
-  border: 2px solid #3BD2C9;
+  color: #d15e14;
+  border: 2px solid #d15e14;
 }
 
 #menu-toggle-btn:hover {
-  border: 2px solid #3BD2C9;
+  border: 2px solid #d15e14;
   background-color: white;
-  color: #3BD2C9;
+  color: #d15e14;
 }
 
 .map-wine {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #3BD2C9;
+  border: 2px solid #d15e14;
   border-radius: 12px;
   padding: 15px;
   margin: 20px auto;
@@ -539,7 +539,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   display: block;
   margin-top: 8px;
   font-size: 16px;
-  color: #3BD2C9;
+  color: #d15e14;
   font-weight: bold;
   text-align: center;
 }

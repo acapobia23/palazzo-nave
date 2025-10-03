@@ -222,13 +222,13 @@ h1, h2, h3, h4, h5, h6, a, button {
 }
 
 .email-btn {
-  background-color: #00bfa6;
+  background-color: #b54c09;
 }
 
 .check-btn:hover,
 .whatsapp-btn:hover,
 .email-btn:hover {
-  background-color: #18b7ac;
+  background-color: #b54c09;
 }
 
 .check-btn:active {
@@ -542,4 +542,27 @@ h1, h2, h3, h4, h5, h6, a, button {
   color: #d15e14;
   font-weight: bold;
   text-align: center;
+}
+
+/* === ICONE CON MASK === */
+
+/* Stile base per tutte le icone */
+.icon-mask {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  background-color: #d15e14; /* arancione base */
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+/* Effetto hover - arancione più chiaro */
+.grid-item:hover .icon-mask {
+  background-color: #ff7a29; /* arancione chiaro */
 }

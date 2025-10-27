@@ -10,16 +10,12 @@
   }
   
 .banner {
-  background: url('../assets/img/headers/logo-grillo-02.png') no-repeat center bottom;
-  background-size: 95% auto; /* rimpicciolisce un po’ l’immagine per lasciare spazio */
-  background-position: center bottom;
+  background: url('../assets/img/headers/logo-grillo-02.png') no-repeat center bottom / contain;
   width: 100%;
-  height: 250px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  height: 20vw; /* 20% della larghezza del viewport */
   border-radius: 0 0 4.2% 4.2%;
 }
+
 
   
   .grid-item {

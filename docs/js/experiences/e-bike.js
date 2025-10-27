@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // === GALLERY ===
   const galleryContainer = document.getElementById("gallery-container");
   if (galleryContainer) {
-    const imageFiles = ["01.jpg","02.jpg","03.png","04.jpg"]; //file name of pic
+    const imageFiles = ["01.jpg","02.jpg","03.webp","04.jpg"]; //file name of pic
     const basePath = "../../assets/img/boxes/experience/e-bike/"; //path pic
     const images = imageFiles.map(f => basePath + f);
 //cambiare alt name linea 14
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     // "Live the Dolce Vita in Florence - eFiat 500 Tour"
     const lines = [
-      `Hello! I'm staying at Velona's Jungle and I'd like to book this ${experience}.`,
+      `Hello! I'm staying at La Gabbia Del Grillo and I'd like to book this ${experience}.`,
       ``,
       `📅 Date:  ${val("date-picker")}`,
     `👤 Name:  ${val("main-guest")}`,

@@ -428,3 +428,77 @@
 .grid-item:hover .icon-mask {
   background-color: #ff7a29; /* arancione chiaro */
 }
+
+
+
+
+/*SEARCH*/
+
+/* ============================================
+   🔍 SEARCH BAR & SUGGESTIONS 
+   ============================================ */
+
+.search-bar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 20;
+}
+
+.search-bar {
+  width: 90%;
+  max-width: 480px;
+  padding: 10px 16px;
+  border-radius: 40px;
+  border: 2px solid #d15e14; /* arancione invece di ciano */
+  background: #ffffffcc;
+  font-size: 1.1rem;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(209, 94, 20, 0.1);
+  transition: border-color 0.2s;
+}
+
+.search-bar:focus {
+  border-color: #ff7a29; /* arancione più chiaro al focus */
+}
+
+.search-suggestions {
+  position: absolute;
+  max-width: 480px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 16px rgba(209, 94, 20, 0.15);
+  border: 1.5px solid #d15e14;
+  padding: 8px 0;
+  z-index: 9999; /* molto alto per stare sopra tutto */
+  font-size: 1rem;
+  max-height: 400px; /* limite altezza */
+  overflow-y: auto; /* scroll se troppi risultati */
+}
+
+.suggestion-item {
+  padding: 10px 24px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background 0.15s;
+}
+
+.suggestion-item:hover {
+  background: #fff0e6; /* arancione chiaro */
+}
+
+.suggestion-keywords {
+  color: #888;
+  font-size: 0.92em;
+}
+
+/* Scroll personalizzato per suggestions */
+.search-suggestions::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb {
+  background: #d15e14;
+  border-radius: 3px;
+}

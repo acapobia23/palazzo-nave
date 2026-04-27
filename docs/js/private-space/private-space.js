@@ -54,17 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
         <label class="bold-text" for="date-picker">Add info and chat!</label>
         <div><p></p></div><p class="bold-gray">*mandatory field</p> 
       <input type="text" id="main-guest" placeholder="*Name and Surname" required>
-        
-      <!-- Sezione campi facoltativi integrata nel bottone -->
-      <div class="expandable-form">
-        <button type="button" class="btn-form" id="toggle-form">
-          <span id="form-toggle-text">optional fields</span>
-          <div id="form-arrow" class="icon-mask arrow-down" style="width: 20px; height: 20px; background-color: #d15e14; -webkit-mask-image: url('../../assets/img/icons/down-arrow.png'); mask-image: url('../../assets/img/icons/down-arrow.png'); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center;"></div>
+  <input type="text" id="host" placeholder="*Who did you book your stay with?" required>
+  
+<!-- Sezione campi facoltativi integrata nel bottone -->
+<div class="expandable-form">
+  <button type="button" class="btn-form" id="toggle-form">
+    <span id="form-toggle-text">optional fields</span>
+    <img id="form-arrow" src="../../assets/img/icons/down-arrow.png" alt="Arrow" class="arrow-down" />
+  </button>
 
-        </button>
-
-        <div id="optional-fields" class="optional-fields">
-
+  <div id="optional-fields" class="optional-fields">
         <input type="text" id="date-picker" placeholder="Select a date" readonly>
         <input type="email" id="email" placeholder="example@email.com">
         <input type="tel" id="phone" placeholder="+39 123 456 7890">
@@ -86,7 +85,6 @@ document.querySelector('.btn-form').addEventListener('click', () => {
 
   container.classList.toggle('open');
   arrow.classList.toggle('arrow-up');
-  arrow.classList.toggle('arrow-down');
 });
 
 
@@ -101,9 +99,16 @@ document.querySelector('.btn-form').addEventListener('click', () => {
     });
   }
 
-  const sendMsg = method => {
+const sendMsg = method => {
     const val = id => document.getElementById(id)?.value.trim() || '';
     const experience = document.querySelector(".section-title")?.innerText.trim() || document.title.trim() || "Unknown Experience";
+
+    // 🔹 Apri la finestra SUBITO (sincrono), prima di qualsiasi async
+    // Altrimenti Safari/iOS blocca window.open come popup
+    let newWindow = null;
+    if (method === "whatsapp") {
+      newWindow = window.open("", "_blank");
+    }
 
     gtag("event", "form_contact", {
       method: method,
@@ -111,11 +116,11 @@ document.querySelector('.btn-form').addEventListener('click', () => {
     });
     
     const lines = [
-      `Hello! I'm staying at La Gabbia Del Grillo and I'd like to book this ${experience}.`,
+      `Hello! I'm staying at ${val("host")} I'd like to book this ${experience}.`,
       ``,
       `📅 Date:  ${val("date-picker")}`,
     `👤 Name:  ${val("main-guest")}`,
-
+    `🏠 Host:  ${val("host")}`,
       `📧 Email: ${val("email")}`,
       `📞 Phone: ${val("phone")}`,
     ];
@@ -128,15 +133,20 @@ document.querySelector('.btn-form').addEventListener('click', () => {
   
     const msg = lines.join('\n');
   
-// 🔹 Aspetta mezzo secondo per dare tempo a GA4 di registrare l'evento
+    // 🔹 Aspetta GA4, poi naviga
     setTimeout(() => {
       if (method === "whatsapp") {
-        window.open(`https://wa.me/393473119031?text=${encodeURIComponent(msg)}`, "_blank");
+        const url = `https://wa.me/+393473119031?text=${encodeURIComponent(msg)}`;
+        if (newWindow) {
+          newWindow.location.href = url;
+        } else {
+          window.location.href = url; // fallback se popup bloccato
+        }
       } else {
         const mailMsg = encodeURIComponent(msg);
         window.location.href = `mailto:wheredolocals@gmail.com?subject=&body=${mailMsg}`;
       }
-    }, 1000);
+    }, 500); // 500ms è sufficiente per GA4
   };
   
 

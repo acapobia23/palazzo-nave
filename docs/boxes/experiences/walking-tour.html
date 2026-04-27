@@ -6,6 +6,7 @@
    <title>Walking Tour - Where Do Locals</title> <!-- scrivere nome experience -->
 
   <link rel="stylesheet" href="../../css/form.css">
+  <link rel="stylesheet" href="../../css/main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
@@ -13,24 +14,24 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B58R7L0WYM"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EH7YNQHCH0"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-B58R7L0WYM');
+  gtag('config', 'G-EH7YNQHCH0');
 </script>
 <link rel="icon" href="../../assets/img/headers/cupola-logo.png" type="image/png">
 </head>
 
 <body data-form-type="walking-tour"> <!-- mettere tag pagina-->
 
-  <header class="menu-header">
-    <a href="../../index.html">
-      <img src="../../assets/img/original/logo-wdl.png" alt="Where Do Locals logo">
-    </a>
-  </header>
+  <a href="../../index.html" class="header-link">
+    <header class="banner">
+      <img src="../../assets/img/svg/logoWDL.svg" alt="Where Do Locals Logo" class="logo-animation" id="wdl-logo" />
+    </header>
+  </a>
 
   <div class="container">
     <br><br><br>
@@ -40,33 +41,128 @@
     <div id="gallery-container"></div>
 
     <section class="description">
-			<p class="bold-grey">Explore Florence with our expert guides on a private walking tour. Discover prestigious sites and must-see attractions, perfect for your first or second day in the city.
+        <hr><br>
+        <!-- ALWAYS VISIBLE -->
+        <!-- PLACE INTRO -->
+        <p>
+            Explore Florence with our licensed local guides on private walking tours designed to match your interests and pace.
+        </p>
 
-				Our general tour covers iconic squares, cathedrals, and monuments, delving into Florence's rich history from ancient Rome to the Renaissance and Risorgimento.
-				
-				<br>We also offer thematic tours, including: <br>
-				<br>
-				- Oltrarno tour<br>
-				- Artisan workshops tour<br>
-				- Food tour<br>
-				<br>
-				Plus, our guides can accompany you in any museum if you already have tickets.
-				<br>
-				<br>
-				Duration: at least 2 hours
-				<br>
-				Get in touch for more information and book your tour today!</p>
+        <hr><br>
+
+        <!-- TOGGLE 1 — OUR MAIN TOUR -->
+        <button class="toggle-btn" data-toggle="main-tour">
+            <span>Our Main Tour</span>
+            <img src="../../assets/img/icons/down-arrow.png"
+                alt="Arrow"
+                class="arrow-down" />
+        </button>
+
+        <div class="toggle-content" data-toggle="main-tour" style="display: none;">
+            <div style="margin: 10px 24px 20px 24px;">
+                <br>
+                <p>
+                    Our General Florence Tour is the perfect introduction to the city.
+                </p>
+                <p>
+                    We cover Florence's iconic squares, churches, palaces, and monuments — telling the story of the city from Roman origins through the Renaissance and into modern times.
+                </p>
+                <p>
+                    This is ideal for a first or second day in Florence.
+                </p>
+            </div>
+            <hr>
+        </div>
+        <br>
+
+        <!-- TOGGLE 2 — FULLY CUSTOMIZABLE -->
+        <button class="toggle-btn" data-toggle="customizable">
+            <span>Fully Customizable</span>
+            <img src="../../assets/img/icons/down-arrow.png"
+                alt="Arrow"
+                class="arrow-down" />
+        </button>
+
+        <div class="toggle-content" data-toggle="customizable" style="display: none;">
+            <div style="margin: 10px 24px 20px 24px;">
+                <br>
+                <h4>Prefer something different?</h4>
+                <br>
+                <p>
+                    Our guides can create any itinerary you wish — focused on art, history, food, hidden corners, or specific neighborhoods.
+                </p>
+                <p>
+                    We also offer museum guiding services:
+                </p>
+                <p>
+                    If you already have museum tickets, our guides can accompany you inside and bring the collections to life.
+                </p>
+                <p>
+                    <strong>Duration:</strong> Tours start from 2 hours and can be extended.
+                </p>
+            </div>
+            <hr>
+        </div>
+        <br>
+
+        <!-- TOGGLE 3 — OUR THEMED TOURS -->
+        <button class="toggle-btn" data-toggle="themed-tours">
+            <span>Our Themed Tours</span>
+            <img src="../../assets/img/icons/down-arrow.png"
+                alt="Arrow"
+                class="arrow-down" />
+        </button>
+
+        <div class="toggle-content" data-toggle="themed-tours" style="display: none;">
+            <!-- Oltrarno Tour -->
+            <div style="margin: 10px 24px 20px 24px;">
+                <br>
+                <h4>Oltrarno Tour</h4>
+                <br>
+                <p>
+                    Discover Florence's most authentic quarter, filled with artisan workshops, quiet streets, and lively local spots.
+                </p>
+            </div>
+            <!-- Artisan Workshops Tour -->
+            <div style="margin: 10px 24px 20px 24px;">
+                <h4>Artisan Workshops Tour</h4>
+                <br>
+                <p>
+                    Meet traditional Florentine craftsmen and step inside historic botteghe where centuries-old skills are still alive.
+                </p>
+            </div>
+            <!-- Food Tour -->
+            <div style="margin: 10px 24px 20px 24px;">
+                <h4>Food Tour</h4>
+                <br>
+                <p>
+                    Taste your way through Florence — from street food to local markets and family-run trattorias.
+                </p>
+            </div>
+        </div>
+        <br>
+
+        <hr><br>
+        <!-- Book Your Tour -->
+        <div style="margin: 10px 24px 20px 24px;">
+            <h4>Book your tour</h4><br>
+            <p style="margin-left: 15px;">
+                Join our walking tour for €60/hour. Please book in advance to secure your preferred date and time! <br>
+                Contact Francesco through the form below for details, availability, and reservations.
+            </p>
+        </div>
+        <br><hr><br>
     </section>
-
     <div id="form-container"></div>
 <br><br><br><br><br>
     <div class="icon-links">
             <a href="https://wa.me/+393473119031" class="text-decoration-none text-dark">
         <img src="../../assets/img/icons/whatsapp.png" alt="contact" /></a>
-      <a href="florence-tour.html"><div class="icon-mask" style="display: inline-block; width: 40px; height: 40px; vertical-align: middle; -webkit-mask-image: url('../../assets/img/icons/back-arrow.png'); mask-image: url('../../assets/img/icons/back-arrow.png');"></div></a>
+      <a href="florence-tour.html"><img src="../../assets/img/icons/back-arrow.png" alt="back" /></a>
     </div>
   </div>
 </body>
 </html>
 
+<script src="../../js/main.js"></script>
 <script src="../../js/experiences/walking-tour.js"></script> <!-- aggiungere js experience-->

@@ -55,17 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
         <label class="bold-text" for="date-picker">Add info and chat!</label>
         <div><p></p></div><p class="bold-gray">*mandatory field</p>
       <input type="text" id="main-guest" placeholder="*Name and Surname" required>
-        
-      <!-- Sezione campi facoltativi integrata nel bottone -->
-      <div class="expandable-form">
-        <button type="button" class="btn-form" id="toggle-form">
-          <span id="form-toggle-text">optional fields</span>
-          <div id="form-arrow" class="icon-mask arrow-down" style="width: 20px; height: 20px; background-color: #d15e14; -webkit-mask-image: url('../../assets/img/icons/down-arrow.png'); mask-image: url('../../assets/img/icons/down-arrow.png'); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center;"></div>
+  <input type="text" id="host" placeholder="*Who did you book your stay with?" required>
+  
+<!-- Sezione campi facoltativi integrata nel bottone -->
+<div class="expandable-form">
+  <button type="button" class="btn-form" id="toggle-form">
+    <span id="form-toggle-text">optional fields</span>
+    <img id="form-arrow" src="../../assets/img/icons/down-arrow.png" alt="Arrow" class="arrow-down" />
+  </button>
 
-        </button>
-
-        <div id="optional-fields" class="optional-fields">
-
+  <div id="optional-fields" class="optional-fields">
         <input type="text" id="date-picker" placeholder="Select a date" readonly>
         <select id="guest-picker">
           ${[...Array(6)].map((_,i)=>
@@ -98,7 +97,6 @@ document.querySelector('.btn-form').addEventListener('click', () => {
 
   container.classList.toggle('open');
   arrow.classList.toggle('arrow-up');
-  arrow.classList.toggle('arrow-down');
 });
 
 
@@ -113,9 +111,16 @@ document.querySelector('.btn-form').addEventListener('click', () => {
     });
   }
 
-  const sendMsg = method => {
+const sendMsg = method => {
     const val = id => document.getElementById(id)?.value.trim() || '';
     const experience = document.querySelector(".section-title")?.innerText.trim() || document.title.trim() || "Unknown Experience";
+
+    // 🔹 Apri la finestra SUBITO (sincrono), prima di qualsiasi async
+    // Altrimenti Safari/iOS blocca window.open come popup
+    let newWindow = null;
+    if (method === "whatsapp") {
+      newWindow = window.open("", "_blank");
+    }
 
     gtag("event", "form_contact", {
       method: method,
@@ -123,11 +128,11 @@ document.querySelector('.btn-form').addEventListener('click', () => {
     });
     
     const lines = [
-      `Hello! I'm staying at La Gabbia Del Grillo and I'd like to book this ${experience}.`,
+      `Hello! I'm staying at ${val("host")} I'd like to book this ${experience}.`,
       ``,
       `📅 Date:  ${val("date-picker")}`,
     `👤 Name:  ${val("main-guest")}`,
-
+    `🏠 Host:  ${val("host")}`,
       `🧑‍🤝‍🧑 Adults: ${val("guest-picker")}`,
       `👶 Minors: ${val("under-18")}`,
       `📧 Email: ${val("email")}`,
@@ -193,3 +198,52 @@ document.getElementById("submit-email")
     lastY = y;
   });
 });
+
+// === TOGGLE FUNCTIONALITY ===
+function initToggleFunctionality() {
+  const toggleButtons = document.querySelectorAll(".toggle-btn");
+
+  toggleButtons.forEach((btn) => {
+    const toggleKey = btn.dataset.toggle; // Leggi l'id dal data attribute
+    const content = document.querySelector(`.toggle-content[data-toggle="${toggleKey}"]`);
+    const arrow = btn.querySelector("img");
+
+    if (!content) return; // Protezione: se il content non esiste, salta
+
+    // Rimuovi eventuali listener precedenti clonando il bottone
+    const newBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(newBtn, btn);
+
+    newBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const isVisible = content.style.display === "block";
+
+      // Chiudi tutte le altre sezioni
+      document.querySelectorAll(".toggle-content").forEach((div) => {
+        div.style.display = "none";
+      });
+      document.querySelectorAll(".toggle-btn img").forEach((img) => {
+        img.classList.remove("arrow-up");
+        img.classList.add("arrow-down");
+      });
+
+      // Apri solo la sezione cliccata
+      content.style.display = isVisible ? "none" : "block";
+
+      if (!isVisible) {
+        const arrowImg = newBtn.querySelector("img");
+        arrowImg.classList.add("arrow-up");
+        arrowImg.classList.remove("arrow-down");
+      }
+    });
+  });
+}
+
+// Esegui quando il DOM è pronto
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initToggleFunctionality);
+} else {
+  initToggleFunctionality();
+}

@@ -1,0 +1,39 @@
+→ sfondo dominante, dà un look pulito e minimale
+→ testi principali, header, contrasto forte
+→ testi secondari e descrizioni
+→ separatori, bordi, elementi UI
+Bianco / Off-white → #FFFFFF / #F5F5F5
+Nero / Antracite → #000000 / #1A1A1A
+Grigio medio → #6B6B6B
+Grigio chiaro → #D9D9D9
+Beige / sabbia (molto leggero) → circa #EAE3D8
+
+/* CSS HEX */
+--#d79e3b: #d79e3b;
+--#0c3c55: #0c3c55;
+--#4b5d52: #4b5d52;
+--#918047: #918047;
+--#73714a: #73714a;
+--#ab8d42: #ab8d42;
+--#cfa238: #cfa238;
+--#c49a3f: #c49a3f;
+
+/* SCSS HEX */
+$#0c3c55: #0c3c55;
+$#d79e3b: #d79e3b;
+$#4b5d52: #4b5d52;
+$#918047: #918047;
+$#73714a: #73714a;
+$#ab8d42: #ab8d42;
+$#cfa238: #cfa238;
+$#c49a3f: #c49a3f;
+
+/* SCSS RGB */
+$#0c3c55: rgba(12,60,85,1);
+$#4b5d52: rgba(75,93,82,1);
+$#d79e3b: rgba(215,158,59,1);
+$#918047: rgba(145,128,71,1);
+$#73714a: rgba(115,113,74,1);
+$#ab8d42: rgba(171,141,66,1);
+$#cfa238: rgba(207,162,56,1);
+$#c49a3f: rgba(196,154,63,1);

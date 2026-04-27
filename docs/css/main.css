@@ -24,6 +24,15 @@
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  .top-header-image {
+    display: block;
+    width: calc(100% - 100px);
+    max-width: 100%;
+    height: auto;
+    margin: 50px auto 0;
+    object-fit: contain;
+  }
   
   .banner {
     background: url('../assets/img/headers/header-1920x1080.jpeg') no-repeat center center;
@@ -535,8 +544,8 @@ html, body {
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background: #ffffff;
-  color: #fff;
+  background: #1b3d4f !important;
+  color: #1b3d4f !important;
   overflow-x: hidden;
 }
 

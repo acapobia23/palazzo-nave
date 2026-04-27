@@ -493,8 +493,8 @@ h1, h2, h3, h4, h5, h6, a, button {
 /* Hover bottone */
 .toggle-btn:hover {
   background-color: white;
-  color: #3BD2C9;
-  border: 2px solid #3BD2C9;
+  color: #0c3c55;
+  border: 2px solid #0c3c55;
 }
 
 /* Icona che ruota */
@@ -519,9 +519,9 @@ h1, h2, h3, h4, h5, h6, a, button {
 }
 
 #menu-toggle-btn:hover {
-  border: 2px solid #3BD2C9;
+  border: 2px solid #0c3c55;
   background-color: white;
-  color: #3BD2C9;
+  color: #0c3c55;
 }
 
 .map-icon {
@@ -559,7 +559,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   display: block;
   margin-top: 8px;
   font-size: 16px;
-  color: #3BD2C9;
+  color: #0c3c55;
   font-weight: bold;
   text-align: center;
 }

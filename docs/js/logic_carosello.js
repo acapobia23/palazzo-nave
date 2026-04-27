@@ -171,7 +171,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
       // Aggiorna stati visivi immediatamente
       dots.forEach((dot, i) => {
         const isActive = (current - 1) === i;
-        dot.style.backgroundColor = isActive ? '#20b2aa' : '#ccc';
+        dot.style.backgroundColor = isActive ? '#0c3c55' : '#ccc';
       });
       cards.forEach((card, i) => {
         card.classList.toggle('active', i === current);
@@ -291,7 +291,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     // Aggiorna i puntini anche dopo il salto per il loop
     dots.forEach((dot, i) => {
       const isActive = (current - 1) === i;
-      dot.style.backgroundColor = isActive ? '#20b2aa' : '#ccc';
+      dot.style.backgroundColor = isActive ? '#0c3c55' : '#ccc';
     });
   });
 

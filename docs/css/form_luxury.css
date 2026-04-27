@@ -1,4 +1,15 @@
 /* === Global === */
+:root {
+  --c-main: #0c3c55;
+  --c-accent: #d79e3b;
+  --c-olive: #0c3c55;
+  --c-warm-1: #918047;
+  --c-warm-2: #73714a;
+  --c-warm-3: #ab8d42;
+  --c-warm-4: #cfa238;
+  --c-warm-5: #c49a3f;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   color: #555454;
@@ -183,7 +194,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   width: 100%;
   padding: 12px;
   margin-bottom: 12px;
-  border: 1px solid #3BD2C9;
+  border: 1px solid var(--c-main);
   border-radius: 20px;
   font-size: 14px;
   background-color: white;
@@ -211,7 +222,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 .whatsapp-btn,
 .email-btn {
   width: 100%;
-  background-color: #3BD2C9;
+  background-color: var(--c-main);
   border: none;
   color: white;
   font-weight: bold;
@@ -223,13 +234,13 @@ h1, h2, h3, h4, h5, h6, a, button {
 }
 
 .email-btn {
-  background-color: #00bfa6;
+  background-color: var(--c-accent);
 }
 
 .check-btn:hover,
 .whatsapp-btn:hover,
 .email-btn:hover {
-  background-color: #18b7ac;
+  background-color: var(--c-warm-3);
 }
 
 .check-btn:active {
@@ -288,7 +299,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 /* Header: mese + anno */
 .pika-title {
   background-color: white;
-  color: #3BD2C9;
+  color: var(--c-main);
   border-radius: 12px 12px 0 0;
   padding: 8px 0;
   font-weight: 600;
@@ -297,7 +308,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 
 /* Label mese/anno dropdown */
 .pika-label {
-  color: #32b3aa;
+  color: var(--c-warm-2);
   font-weight: bold;
 }
 
@@ -311,21 +322,21 @@ h1, h2, h3, h4, h5, h6, a, button {
 
 /* Giorno selezionato */
 .pika-single .is-selected .pika-button {
-  background: #3BD2C9;
+  background: var(--c-main);
   color: white;
   border-radius: 8px;
 }
 
 /* Giorno attivo (oggi) */
 .pika-single .is-today .pika-button {
-  color: #3BD2C9;
+  color: var(--c-main);
   font-weight: bold;
-  border-bottom: 2px solid #3BD2C9;
+  border-bottom: 2px solid var(--c-main);
 }
 
 /* Disabilita hover su mobile (facoltativo: safe per mobile-first) */
 .pika-button:hover {
-  background: #3BD2C9;
+  background: var(--c-main);
   color: white;
 }
 
@@ -370,8 +381,8 @@ h1, h2, h3, h4, h5, h6, a, button {
 .license-btn {
   width: 100%;
   background-color: white;
-  border: 2px solid #3BD2C9;
-  color: #3BD2C9;
+  border: 2px solid var(--c-main);
+  color: var(--c-main);
   font-weight: bold;
   padding: 14px 20px;
   font-size: 16px;
@@ -387,15 +398,15 @@ h1, h2, h3, h4, h5, h6, a, button {
 /* ✅ Colori FISSI */
 #toggle-attribution {
   background-color: white;
-  color: #3BD2C9;
-  border: 2px solid #3BD2C9;
+  color: var(--c-main);
+  border: 2px solid var(--c-main);
 }
 
 /* ✅ Hover con contrasto visibile */
 #toggle-attribution:hover {
-  border: 2px solid #3BD2C9;
+  border: 2px solid var(--c-main);
   background-color: white;
-  color: #3BD2C9;
+  color: var(--c-main);
 }
 
 /* ✅ Testo flessibile senza allargare bottone */
@@ -429,7 +440,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   border-radius: 20px; /* come i bottoni */
   margin-top: 10px;
   font-family: Arial, sans-serif;
-  border: 2px solid #3BD2C9; /* aggiunge il bordo come i bottoni */
+  border: 2px solid var(--c-main); /* aggiunge il bordo come i bottoni */
   box-sizing: border-box;
 }
 
@@ -457,8 +468,8 @@ h1, h2, h3, h4, h5, h6, a, button {
 .toggle-btn {
   width: 100%;
   background-color: white;
-  border: 2px solid #3BD2C9;
-  color: #3BD2C9;
+  border: 2px solid var(--c-main);
+  color: var(--c-main);
   font-weight: bold;
   padding: 14px 20px;
   font-size: 16px;
@@ -474,8 +485,8 @@ h1, h2, h3, h4, h5, h6, a, button {
 /* Hover bottone */
 .toggle-btn:hover {
   background-color: white;
-  color: #3BD2C9;
-  border: 2px solid #3BD2C9;
+  color: var(--c-main);
+  border: 2px solid var(--c-main);
 }
 
 /* Icona che ruota */
@@ -495,21 +506,21 @@ h1, h2, h3, h4, h5, h6, a, button {
 
 #menu-toggle-btn {
   background-color: white;
-  color: #3BD2C9;
-  border: 2px solid #3BD2C9;
+  color: var(--c-main);
+  border: 2px solid var(--c-main);
 }
 
 #menu-toggle-btn:hover {
-  border: 2px solid #3BD2C9;
+  border: 2px solid var(--c-main);
   background-color: white;
-  color: #3BD2C9;
+  color: var(--c-main);
 }
 
 .map-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #3BD2C9;
+  border: 2px solid var(--c-main);
   border-radius: 12px;
   padding: 15px;
   margin: 20px auto;
@@ -521,7 +532,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 .map-icon:hover {
   background-color: #f0f9f9;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(59, 210, 201, 0.2);
+  box-shadow: 0 4px 8px rgba(12, 60, 85, 0.12);
 }
 
 .map-icon a {
@@ -540,7 +551,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   display: block;
   margin-top: 8px;
   font-size: 16px;
-  color: #3BD2C9;
+  color: var(--c-main);
   font-weight: bold;
   text-align: center;
 }
@@ -549,7 +560,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 
 /* Contenitore bottone + campi opzionali */
 .expandable-form {
-  border: 1px solid #3BD2C9;
+  border: 1px solid var(--c-main);
   border-radius: 20px;
   background-color: white;
   overflow: hidden;               /* ← evita la parte bianca che si allunga */
@@ -562,7 +573,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   padding: 12px 20px;
   border: none;                   /* ← toglie il doppio bordo */
   background-color: #f0f0f0;
-  color: #3BD2C9;
+  color: var(--c-main);
   font-weight: bold;
   font-size: 14px;
   cursor: pointer;
@@ -609,7 +620,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   width: 100%;
   padding: 12px;
   margin-bottom: 12px;
-  border: 1px solid #3BD2C9;
+  border: 1px solid var(--c-main);
   border-radius: 20px;
   font-size: 14px;
   background-color: white;
@@ -631,7 +642,7 @@ h1, h2, h3, h4, h5, h6, a, button {
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
-    border: 3px solid #3BD2C9;
+    border: 3px solid var(--c-main);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -649,7 +660,7 @@ h1, h2, h3, h4, h5, h6, a, button {
     border-radius:  80px;
     padding: 20px;
     box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
-    border: 3px solid #3BD2C9;
+    border: 3px solid var(--c-main);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -784,7 +795,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 .privilege-label-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #3BD2C9, transparent);
+  background: linear-gradient(90deg, transparent, var(--c-main), transparent);
 }
 
 .privilege-label-text {
@@ -792,7 +803,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #3BD2C9;
+  color: var(--c-main);
   white-space: nowrap;
 }
 
@@ -806,12 +817,12 @@ h1, h2, h3, h4, h5, h6, a, button {
   color: inherit;
   position: relative;
   border-radius: 16px;
-  border: 1px solid #3BD2C9;
+  border: 1px solid var(--c-main);
   overflow: hidden;
   background: #fff;
   box-shadow:
     0 2px 8px rgba(0,0,0,0.07),
-    0 0 0 1px rgba(59, 210, 201, 0.25),
+    0 0 0 1px rgba(12, 60, 85, 0.12),
     inset 0 1px 0 rgba(255,255,255,0.9);
   transition: transform 0.22s ease, box-shadow 0.22s ease;
   isolation: isolate;
@@ -827,7 +838,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   right: 2px;
   transform: translate(34%, -56%);
   z-index: 3;
-  box-shadow: 0 7px 16px rgba(15, 43, 91, 0.16);
+  box-shadow: 0 7px 16px rgba(12, 60, 85, 0.16);
 }
 
 .privilege-card.has-offer .offer-left,
@@ -842,10 +853,10 @@ h1, h2, h3, h4, h5, h6, a, button {
 }
 
 :root {
-  --blue-dark: #080536;
-  --blue-light: #6fffff;
-  --blue-light-alt: #47eef7;
-  --text-dark: #080536;
+  --offer-dark: var(--c-main);
+  --offer-light: var(--c-accent);
+  --offer-light-alt: var(--c-warm-4);
+  --text-dark: #333333;
 }
 
 .offer-card {
@@ -853,7 +864,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   align-items: stretch;
   border-radius: 3px;
   overflow: hidden;
-  box-shadow: 0 10px 24px rgba(15, 43, 91, 0.2);
+  box-shadow: 0 10px 24px rgba(12, 60, 85, 0.2);
   transform-origin: center;
   --right-cut: 40px;
   clip-path: polygon(
@@ -881,13 +892,13 @@ h1, h2, h3, h4, h5, h6, a, button {
 }
 
 .offer-left {
-  background: var(--blue-dark);
+  background: var(--offer-dark);
   color: #ffffff;
 }
 
 .offer-right {
   position: relative;
-  background: var(--blue-light);
+  background: var(--offer-light);
   color: var(--text-dark);
   --slice-offset: 8px;
   --right-extra: 12px;
@@ -898,7 +909,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--blue-light-alt);
+  background: var(--offer-light-alt);
   clip-path: polygon(
     0 0,
     100% 0,
@@ -928,8 +939,8 @@ h1, h2, h3, h4, h5, h6, a, button {
 .privilege-card:hover {
   transform: translateY(-3px) scale(1.012);
   box-shadow:
-    0 10px 28px rgba(59, 210, 201, 0.22),
-    0 0 0 1.5px rgba(59, 210, 201, 0.55),
+    0 10px 28px rgba(12, 60, 85, 0.12),
+    0 0 0 1.5px rgba(12, 60, 85, 0.25),
     inset 0 1px 0 rgba(255,255,255,0.9);
 }
 
@@ -942,7 +953,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   bottom: 0;
   height: auto;
   width: 3px;
-  background: linear-gradient(180deg, #3BD2C9, #1aa8a0);
+  background: linear-gradient(180deg, var(--c-main), var(--c-warm-3));
   border-radius: 16px 0 0 16px;
   z-index: 0;
 }
@@ -1005,7 +1016,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #3BD2C9;
+  color: var(--c-main);
 }
 
 /* Titolo */
@@ -1029,7 +1040,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 .privilege-cta {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #1aa8a0;
+  color: var(--c-accent);
   letter-spacing: 0.05em;
   margin-top: 4px;
   transition: letter-spacing 0.2s ease;
@@ -1043,7 +1054,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 .privilege-divider {
   margin-top: 8px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(59,210,201,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(12,60,85,0.12), transparent);
 }
 
 @media (max-width: 600px) {

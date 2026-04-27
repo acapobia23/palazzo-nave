@@ -1,4 +1,15 @@
 /* === Global === */
+:root {
+  --c-main: #0c3c55;
+  --c-accent: #d79e3b;
+  --c-olive: #0c3c55;
+  --c-warm-1: #918047;
+  --c-warm-2: #73714a;
+  --c-warm-3: #ab8d42;
+  --c-warm-4: #cfa238;
+  --c-warm-5: #c49a3f;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   color: #555454;
@@ -183,7 +194,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   width: 100%;
   padding: 12px;
   margin-bottom: 12px;
-  border: 1px solid #3BD2C9;
+  border: 1px solid var(--c-main);
   border-radius: 20px;
   font-size: 14px;
   background-color: white;
@@ -212,7 +223,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 .whatsapp-btn,
 .email-btn {
   width: 100%;
-  background-color: #3BD2C9;
+  background-color: var(--c-main);
   border: none;
   color: white;
   font-weight: bold;
@@ -231,13 +242,13 @@ h1, h2, h3, h4, h5, h6, a, button {
 }
 
 .email-btn {
-  background-color: #00bfa6;
+  background-color: var(--c-accent);
 }
 
 .check-btn:hover,
 .whatsapp-btn:hover,
 .email-btn:hover {
-  background-color: #18b7ac;
+  background-color: var(--c-warm-3);
 }
 
 .check-btn:active {
@@ -296,7 +307,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 /* Header: mese + anno */
 .pika-title {
   background-color: white;
-  color: #3BD2C9;
+  color: var(--c-main);
   border-radius: 12px 12px 0 0;
   padding: 8px 0;
   font-weight: 600;
@@ -305,7 +316,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 
 /* Label mese/anno dropdown */
 .pika-label {
-  color: #32b3aa;
+  color: var(--c-warm-2);
   font-weight: bold;
 }
 
@@ -319,21 +330,21 @@ h1, h2, h3, h4, h5, h6, a, button {
 
 /* Giorno selezionato */
 .pika-single .is-selected .pika-button {
-  background: #3BD2C9;
+  background: var(--c-main);
   color: white;
   border-radius: 8px;
 }
 
 /* Giorno attivo (oggi) */
 .pika-single .is-today .pika-button {
-  color: #3BD2C9;
+  color: var(--c-main);
   font-weight: bold;
-  border-bottom: 2px solid #3BD2C9;
+  border-bottom: 2px solid var(--c-main);
 }
 
 /* Disabilita hover su mobile (facoltativo: safe per mobile-first) */
 .pika-button:hover {
-  background: #3BD2C9;
+  background: var(--c-main);
   color: white;
 }
 
@@ -378,8 +389,8 @@ h1, h2, h3, h4, h5, h6, a, button {
 .license-btn {
   width: 100%;
   background-color: white;
-  border: 2px solid #3BD2C9;
-  color: #3BD2C9;
+  border: 2px solid var(--c-main);
+  color: var(--c-main);
   font-weight: bold;
   padding: 14px 20px;
   font-size: 16px;
@@ -395,8 +406,8 @@ h1, h2, h3, h4, h5, h6, a, button {
 /* ✅ Colori FISSI */
 #toggle-attribution {
   background-color: white;
-  color: #3BD2C9;
-  border: 2px solid #3BD2C9;
+  color: var(--c-main);
+  border: 2px solid var(--c-main);
 }
 
 /* ✅ Hover con contrasto visibile */
@@ -437,7 +448,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   border-radius: 20px; /* come i bottoni */
   margin-top: 10px;
   font-family: Arial, sans-serif;
-  border: 2px solid #3BD2C9; /* aggiunge il bordo come i bottoni */
+  border: 2px solid var(--c-main); /* aggiunge il bordo come i bottoni */
   box-sizing: border-box;
 }
 
@@ -465,8 +476,8 @@ h1, h2, h3, h4, h5, h6, a, button {
 .toggle-btn {
   width: 100%;
   background-color: white;
-  border: 2px solid #3BD2C9;
-  color: #3BD2C9;
+  border: 2px solid var(--c-main);
+  color: var(--c-main);
   font-weight: bold;
   padding: 14px 20px;
   font-size: 16px;
@@ -503,8 +514,8 @@ h1, h2, h3, h4, h5, h6, a, button {
 
 #menu-toggle-btn {
   background-color: white;
-  color: #3BD2C9;
-  border: 2px solid #3BD2C9;
+  color: var(--c-main);
+  border: 2px solid var(--c-main);
 }
 
 #menu-toggle-btn:hover {
@@ -517,7 +528,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #3BD2C9;
+  border: 2px solid var(--c-main);
   border-radius: 12px;
   padding: 15px;
   margin: 20px auto;
@@ -529,7 +540,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 .map-icon:hover {
   background-color: #f0f9f9;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(59, 210, 201, 0.2);
+  box-shadow: 0 4px 8px rgba(12, 60, 85, 0.12);
 }
 
 .map-icon a {
@@ -557,7 +568,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 
 /* Contenitore bottone + campi opzionali */
 .expandable-form {
-  border: 1px solid #3BD2C9;
+  border: 1px solid var(--c-main);
   border-radius: 20px;
   background-color: white;
   overflow: hidden;               /* ← evita la parte bianca che si allunga */
@@ -570,7 +581,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   padding: 12px 20px;
   border: none;                   /* ← toglie il doppio bordo */
   background-color: #f0f0f0;
-  color: #3BD2C9;
+  color: var(--c-main);
   font-weight: bold;
   font-size: 14px;
   cursor: pointer;
@@ -617,7 +628,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   width: 100%;
   padding: 12px;
   margin-bottom: 12px;
-  border: 1px solid #3BD2C9;
+  border: 1px solid var(--c-main);
   border-radius: 20px;
   font-size: 14px;
   background-color: white;
@@ -639,7 +650,7 @@ h1, h2, h3, h4, h5, h6, a, button {
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
-    border: 3px solid #3BD2C9;
+    border: 3px solid var(--c-main);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -657,7 +668,7 @@ h1, h2, h3, h4, h5, h6, a, button {
     border-radius:  80px;
     padding: 20px;
     box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
-    border: 3px solid #3BD2C9;
+    border: 3px solid var(--c-main);
     display: flex;
     flex-direction: column;
     align-items: center;

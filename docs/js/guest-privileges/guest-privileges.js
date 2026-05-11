@@ -287,16 +287,21 @@ document.addEventListener("DOMContentLoaded", () => {
       // Apri solo la sezione cliccata
       content.style.display = isVisible ? "none" : "block";
 
-      if (!isVisible) {
-        arrow.classList.add("arrow-up");
-        arrow.classList.remove("arrow-down");
-
-        // Se è la mappa, forza l'aggiornamento Leaflet
-        if (toggleKey === "spots" && typeof map !== "undefined") {
-          setTimeout(() => {
-            map.invalidateSize();
-          }, 250);
+      if (arrow) {
+        if (!isVisible) {
+          arrow.classList.add("arrow-up");
+          arrow.classList.remove("arrow-down");
+        } else {
+          arrow.classList.remove("arrow-up");
+          arrow.classList.add("arrow-down");
         }
+      }
+
+      // Se è la mappa, forza l'aggiornamento Leaflet
+      if (!isVisible && toggleKey === "spots" && typeof map !== "undefined") {
+        setTimeout(() => {
+          map.invalidateSize();
+        }, 250);
       }
     });
   });

@@ -15,9 +15,9 @@
     --c-warm-5: #c49a3f;
   }
   
-  body, h1, h2, h3, h4, h5, h6, p, a, button {
+  body, h1, h2, h3, h4, h5, h6, p, a, span, button {
     font-family: 'Poppins', sans-serif;
-    color: #555454;
+    color: #b4adad;
   }
 
   main.container > p {
@@ -1103,6 +1103,7 @@ body {
 }
 
 .privilege-label-text {
+  color: white;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.18em;

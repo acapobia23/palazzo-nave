@@ -1106,16 +1106,15 @@ body {
 .privilege-label-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--c-accent), transparent);
+  background: linear-gradient(90deg, transparent, #c0c0c0, transparent);
 }
 
 .privilege-label-text {
-  color: white;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--c-main);
+  color: #c0c0c0;
   white-space: nowrap;
 }
 

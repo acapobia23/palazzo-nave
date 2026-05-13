@@ -877,7 +877,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 .privilege-label-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--c-main), transparent);
+  background: linear-gradient(90deg, transparent, #c0c0c0, transparent);
 }
 
 .privilege-label-text {
@@ -885,7 +885,7 @@ h1, h2, h3, h4, h5, h6, a, button {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--c-main);
+  color: #c0c0c0;
   white-space: nowrap;
 }
 

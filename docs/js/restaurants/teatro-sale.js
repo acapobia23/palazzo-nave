@@ -99,11 +99,11 @@ const sendMsg = method => {
     });
     
     const lines = [
-      `Hello! I'm staying at ${val("host")} I'd like to book this ${experience}.`,
+      `Hello! I'm staying at Palazzo Della Nave I'd like to book this ${experience}.`,
       ``,
       `📅 Date:  ${val("date-picker")}`,
     `👤 Name:  ${val("main-guest")}`,
-    `🏠 Host:  ${val("host")}`,
+    `🏠 Host:  Palazzo Della Nave`,
       `🧑‍🤝‍🧑 Adults: ${val("guest-picker")}`,
       `👶 Minors: ${val("under-18")}`,
       `📧 Email: ${val("email")}`,

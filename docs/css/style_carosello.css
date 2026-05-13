@@ -82,6 +82,60 @@ body {
   opacity: 1;
 }
 
+@media (min-width: 501px) and (max-width: 699px) {
+  .carousel-card {
+    min-width: 320px;
+    max-width: 420px;
+  }
+}
+
+@media (min-width: 501px) {
+  .carousel {
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+  }
+
+  .carousel-track {
+    transform: none;
+    width: max-content;
+    min-width: 100%;
+  }
+
+  .carousel-card {
+    scroll-snap-align: start;
+  }
+
+  .carousel-pill {
+    left: 1.6rem;
+    top: -0.75rem;
+  }
+
+  .carousel-card .card-title-pill {
+    left: auto;
+    right: 10px;
+    top: -0.5rem;
+    width: fit-content;
+  }
+
+  .carousel-track.carousel-native-scroll {
+    transform: none !important;
+    opacity: 1;
+  }
+
+  .carousel-card-clone {
+    display: none !important;
+  }
+
+  .carousel-dots {
+    display: none !important;
+  }
+}
+
 .carousel-card {
   background: #fff;
   background-size: cover;
@@ -107,6 +161,7 @@ body {
   color: inherit;
   margin-top: 60px;
   position: relative;
+  scroll-snap-align: start;
 }
 
 /* Contenitore immagine - occupa 80% superiore */

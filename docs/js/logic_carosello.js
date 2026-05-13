@@ -5,7 +5,12 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   track.setAttribute('data-enhanced-drag', 'true');
   const originalCards = Array.from(track.querySelectorAll('.carousel-card'));
   const total = originalCards.length;
+  const WIDE_SCROLL_THRESHOLD = 501;
   const TOUCH_SNAP_BIAS_STEPS = 0.2; // Aumenta per swipe più "pigro" (es. 0.14), riduci per più precisione (es. 0.08)
+
+  function isWideScrollableMode() {
+    return window.innerWidth >= WIDE_SCROLL_THRESHOLD;
+  }
 
   // Funzione per calcolare le dimensioni reali
   function calculateDimensions() {
@@ -22,6 +27,13 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   }
 
   // Clona le card per effetto loop e calcola la posizione iniziale
+  if (isWideScrollableMode()) {
+    track.classList.add('carousel-initialized', 'carousel-native-scroll');
+    track.style.setProperty('--carousel-offset', '0px');
+    track.style.setProperty('--carousel-duration', '0s');
+    return;
+  }
+
   const firstClone = originalCards[0].cloneNode(true);
   firstClone.classList.add('carousel-card-clone');
   const lastClone = originalCards[total - 1].cloneNode(true);
@@ -41,7 +53,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   
   // Calcolo e posizionamento ultra-veloce con CSS Custom Properties
   function getCenteredOffsetForIndex(index) {
-    if (window.innerWidth >= 700) return 0;
+    if (isWideScrollableMode()) return 0;
 
     const dims = calculateDimensions();
     const targetOffset =
@@ -60,7 +72,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   }
 
   function getNearestIndexFromOffset(offset, swipeDeltaX = 0) {
-    if (window.innerWidth >= 700) return current;
+    if (isWideScrollableMode()) return current;
 
     const dims = calculateDimensions();
     const step = dims.cardWidth + dims.gap;
@@ -210,7 +222,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   }
 
   touchSurface.addEventListener('touchstart', e => {
-    if (window.innerWidth >= 700) {
+    if (isWideScrollableMode()) {
       resetTouchState();
       return;
     }
@@ -226,7 +238,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   }, { passive: true });
 
   touchSurface.addEventListener('touchmove', e => {
-    if (touchStartX === null || touchStartY === null || window.innerWidth >= 700) return;
+    if (touchStartX === null || touchStartY === null || isWideScrollableMode()) return;
 
     const touch = e.touches[0];
     const dx = touch.clientX - touchStartX;
@@ -253,7 +265,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   }, { passive: false });
 
   touchSurface.addEventListener('touchend', () => {
-    if (touchStartX === null || window.innerWidth >= 700) {
+    if (touchStartX === null || isWideScrollableMode()) {
       resetTouchState();
       return;
     }

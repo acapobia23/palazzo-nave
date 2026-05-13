@@ -3,6 +3,8 @@
 // - la pillola turchese mantiene lo stesso spessore (altezza) della bianca
 
 function syncTurquoisePillWithWhite(section) {
+  if (window.innerWidth >= 501) return;
+
   const turquoisePill = section.querySelector('.carousel-pill');
   if (!turquoisePill) return;
 

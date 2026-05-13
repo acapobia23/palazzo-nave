@@ -33,6 +33,13 @@
     margin: 50px auto 0;
     object-fit: contain;
   }
+
+  @media (min-width: 501px) {
+    .top-header-image {
+      width: auto;
+      max-width: 100%;
+    }
+  }
   
   .banner {
     background: url('../assets/img/headers/header-1920x1080.jpeg') no-repeat center center;

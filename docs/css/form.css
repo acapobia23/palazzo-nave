@@ -67,6 +67,18 @@ h1, h2, h3, h4, h5, h6, a, button {
   text-align: left;
 }
 
+/* === Ship Package Page === */
+body[data-form-type="ship-package"] {
+  background: #1b3d4f !important;
+  color: #1b3d4f !important;
+  padding-top: 0;
+}
+
+body[data-form-type="ship-package"] > .container > h2,
+body[data-form-type="ship-package"] .description > h2 {
+  color: #c0c0c0 !important;
+}
+
 /* === GALLERY === */
 .gallery {
   position: relative;

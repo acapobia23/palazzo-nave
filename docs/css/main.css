@@ -15,7 +15,7 @@
     --c-warm-5: #c49a3f;
   }
   
-  body, h1, h2, h3, h4, h5, h6, p, a, span, button, ul, li {
+  body, h1, h2, h3, h4, h5, h6, p, a, span, button, ul, li, strong {
     font-family: 'Poppins', sans-serif;
     color: #b4adad;
   }

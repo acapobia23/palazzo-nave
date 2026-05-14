@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <label class="bold-text" for="date-picker">Add info and chat!</label>
             <p class="bold-gray">*mandatory field</p>        
             <input type="text" id="main-guest" placeholder="*Name and Surname" required></input>
-            <input type="text" id="host" placeholder="*Who did you book your stay with?" required></input>
+            </input>
             <textarea id="optional-request" placeholder="Request"></textarea>
 
 
@@ -186,10 +186,10 @@ const sendMsg = method => {
     });
     
     const lines = [
-      `Hello! I'm staying at ${val("host")} I'd like to book this ${experience}.`,
+      `Hello! I'm staying at Palazzo Della Nave I'd like to book this ${experience}.`,
       ``,
       `👤 Name:  ${val("main-guest")}`,
-      `🏠 Host:  ${val("host")}`,
+      `🏠 Host:  Palazzo Della Nave`,
       `📧 Email: ${val("email")}`,
       `📞 Phone: ${val("phone")}`,
     ];

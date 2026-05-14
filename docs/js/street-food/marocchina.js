@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <label class="bold-text" for="date-picker">Add info and chat!</label>
         <div><p></p></div><p class="bold-gray">*mandatory field</p>  
       <input type="text" id="main-guest" placeholder="*Name and Surname" required>
-  <input type="text" id="host" placeholder="*Who did you book your stay with?" required>
+  
   
 <!-- Sezione campi facoltativi integrata nel bottone -->
 <div class="expandable-form">
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </select>
         <input type="email" id="email" placeholder="example@email.com">
         <input type="tel" id="phone" placeholder="+39 123 456 7890">
-        <textarea id="optional-request" placeholder="Optional Request"></textarea>
+        
       </div>
     </div>
     <br>
@@ -127,10 +127,10 @@ const sendMsg = method => {
     });
     
     const lines = [
-      `Hello! I'm staying at ${val("host")} I'd like to book this ${experience}.`,
+      `Hello! I'm staying at Palazzo Della Nave I'd like to book this ${experience}.`,
       ``,
     `👤 Name:  ${val("main-guest")}`,
-    `🏠 Host:  ${val("host")}`,
+    `🏠 Host:  Palazzo Della Nave`,
       `🧑‍🤝‍🧑 Adults: ${val("guest-picker")}`,
       `👶 Minors: ${val("under-18")}`,
       `📧 Email: ${val("email")}`,

@@ -61,6 +61,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 
 /* === Headings === */
 .section-title {
+  color: #b4adad;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 10px;
@@ -148,7 +149,7 @@ body[data-form-type="ship-package"] .description > h2 {
 
 /* === Content === */
 .description h3,
-.description h4 {
+.description h4, h2 {
   font-size: 1.1rem; 
   font-weight: 600;
   color: #e6e4e4;

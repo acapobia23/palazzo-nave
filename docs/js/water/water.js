@@ -96,11 +96,11 @@ const sendMsg = method => {
     const lines = [
       `Hello! I'm staying at Palazzo Della Nave I'd like to book this ${experience}.`,
       ``,
-      `👤 Name:  ${val("main-guest")}`,
-      `🏠 Host:  Palazzo Della Nave`,
-      `📧 Email: ${val("email")}`,
-      `📞 Phone: ${val("phone")}`,
-      `📝 Notes: ${val("optional-request")}`,
+      `Name:  ${val("main-guest")}`,
+      `Host:  Palazzo Della Nave`,
+      `Email: ${val("email")}`,
+      `Phone: ${val("phone")}`,
+      `Notes: ${val("optional-request")}`,
     ];
   
     lines.push(``, `Looking forward to your reply!`);

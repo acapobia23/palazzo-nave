@@ -143,13 +143,14 @@ document.addEventListener("DOMContentLoaded", () => {
         `Hello! I'd like to book: ${experience}.`,
         ``,
         `Name:          ${val("name-surname")}`,
-        `Host:          Palazzo Della Nave`,
         `Service:       ${val("service-name")}`,
         `Date:          ${val("date-picker")}`,
         `Pick-up Time:  ${val("pick-up-time")}`,
         `Pick-up:       ${val("pick-up-location")}`,
         `Drop-off:      ${val("drop-off-location")}`,
         guestsLine,
+        ``,
+        `Palazzo Della Nave`,
       ];
 
       const email       = val("email");

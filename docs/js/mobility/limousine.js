@@ -43,144 +43,164 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // === FORM === //cambiare qui info form
+  // === FORM ===
   const formContainer = document.getElementById("form-container");
   if (formContainer) {
+    const experience =
+      document.querySelector("h1.section-title")?.innerText.trim() ||
+      document.title.trim() ||
+      "Unknown Experience";
+
     formContainer.innerHTML = `
       <div id="message-box" class="hidden">
         <p id="message-text"></p>
       </div>
 
       <form id="booking-form" class="booking-form" novalidate>
-        <label class="bold-text" for="date-picker">Add info and chat!</label>
-        <div><p></p></div><p class="bold-gray">*mandatory field</p> 
-      <input type="text" id="main-guest" placeholder="*Name and Surname" required>
-  
-  
-<!-- Sezione campi facoltativi integrata nel bottone -->
-<div class="expandable-form">
-  <button type="button" class="btn-form" id="toggle-form">
-    <span id="form-toggle-text">optional fields</span>
-    <img id="form-arrow" src="../../assets/img/icons/down-arrow.png" alt="Arrow" class="arrow-down" />
-  </button>
+        <label class="bold-text">Add info and chat!</label>
+        <div><p></p></div>
+        <p class="bold-gray">*mandatory field</p>
 
-  <div id="optional-fields" class="optional-fields">
-        <input type="text" id="date-picker" placeholder="Select a date" readonly>
-        <select id="guest-picker">
-          ${[...Array(6)].map((_,i)=>
-            `<option value="${i+1}">${i+1} Passengers${i>0?'s':''}</option>`
+        <input type="text" id="name-surname"      placeholder="*Name and Surname"   required>
+        <input type="hidden" id="service-name"   value="${experience}">
+        <input type="text" id="pick-up-location"  placeholder="*Pick-up Location"   required>
+        <input type="text" id="drop-off-location" placeholder="*Drop-off Location"  required>
+        <input type="text" id="date-picker"       placeholder="*Select a Date" readonly required>
+        <input type="time" id="pick-up-time"      placeholder="*Pick-up Time"        required>
+
+        <select id="guest-picker" required>
+          ${[...Array(6)].map((_, i) =>
+            `<option value="${i + 1}">${i + 1} Adult${i > 0 ? 's' : ''}</option>`
           ).join('')}
         </select>
-        <input type="email" id="email" placeholder="example@email.com">
-        <input type="tel" id="phone" placeholder="+39 123 456 7890">
-        
-      </div>
-    </div>
-    <br>
-  
-  <!-- Bottoni di invio -->
-  <button type="submit" class="check-btn">Send and chat via WhatsApp</button>
+        <select id="under-18">
+          <option value="0">No Children</option>
+          ${[...Array(8)].map((_, i) =>
+            `<option value="${i + 1}">${i + 1} Child${i > 0 ? 'ren' : ''}</option>`
+          ).join('')}
+        </select>
+
+        <!-- Campi opzionali -->
+        <div class="expandable-form">
+          <button type="button" class="btn-form" id="toggle-form">
+            <span id="form-toggle-text">optional fields</span>
+            <img id="form-arrow" src="../../assets/img/icons/down-arrow.png" alt="Arrow" class="arrow-down" />
+          </button>
+
+          <div id="optional-fields" class="optional-fields">
+            <input type="email" id="email"            placeholder="example@email.com">
+            <input type="tel"   id="phone"            placeholder="+39 123 456 7890">
+            <textarea           id="optional-request" placeholder="Special Requests"></textarea>
+          </div>
+        </div>
+        <br>
+
+        <!-- Bottoni di invio -->
+        <button type="submit" class="check-btn">Send and chat via WhatsApp</button>
         <div><p></p></div>
         <button type="button" id="submit-email" class="check-btn">Send via email</button>
         <p style="color: #888888;">No auto-replies, no bot</p>
       </form>
     `;
-document.querySelector('.btn-form').addEventListener('click', () => {
-  const container = document.querySelector('.expandable-form');
-  const arrow = document.getElementById('form-arrow');
-
-  container.classList.toggle('open');
-  arrow.classList.toggle('arrow-up');
-});
-
-
-  // Inizializza il date picker (SPOSTATO DOPO IL TOGGLE)
-  const dateInput = document.getElementById('date-picker');
-  if (dateInput) {
-    const picker = new Pikaday({
-      field: dateInput,
-      format: 'DD/MM/YYYY',
-      minDate: new Date(),
-      theme: 'dark-theme'
+    // Toggle campi opzionali
+    document.querySelector('.btn-form').addEventListener('click', () => {
+      document.querySelector('.expandable-form').classList.toggle('open');
+      document.getElementById('form-arrow').classList.toggle('arrow-up');
     });
-  }
 
-const sendMsg = method => {
-    const val = id => document.getElementById(id)?.value.trim() || '';
-    const experience = document.querySelector(".section-title")?.innerText.trim() || document.title.trim() || "Unknown Experience";
-
-    // 🔹 Apri la finestra SUBITO (sincrono), prima di qualsiasi async
-    // Altrimenti Safari/iOS blocca window.open come popup
-    let newWindow = null;
-    if (method === "whatsapp") {
-      newWindow = window.open("", "_blank");
+    // Date picker
+    const dateInput = document.getElementById('date-picker');
+    if (dateInput) {
+      new Pikaday({
+        field: dateInput,
+        format: 'DD/MM/YYYY',
+        minDate: new Date(),
+        theme: 'dark-theme'
+      });
     }
 
-    gtag("event", "form_contact", {
-      method: method,
-      experience: experience
-    });
-    
-    const lines = [
-      `Hello! I'm staying at Palazzo Della Nave I'd like to book this ${experience}.`,
-      ``,
-      `Date:  ${val("date-picker")}`,
-    `Name:  ${val("main-guest")}`,
-    `Host:  Palazzo Della Nave`,
-      `Adults: ${val("guest-picker")}`,
-      `Email: ${val("email")}`,
-      `Phone: ${val("phone")}`,
-    ];
-  
-    if (val("optional-request")) {
-      lines.push(`Notes: ${val("optional-request")}`);
-    }
-  
-    lines.push(``, `Looking forward to your reply!`);
-  
-    const msg = lines.join('\n');
-  
-    // 🔹 Aspetta GA4, poi naviga
-    setTimeout(() => {
+    // ─── Costruzione e invio messaggio ───────────────────────────────────────
+    const sendMsg = method => {
+      const val = id => document.getElementById(id)?.value.trim() || '';
+
+      // Apri la finestra subito (sincrono) — Safari/iOS blocca window.open async
+      let newWindow = null;
       if (method === "whatsapp") {
-        const url = `https://wa.me/+393473119031?text=${encodeURIComponent(msg)}`;
-        if (newWindow) {
-          newWindow.location.href = url;
-        } else {
-          window.location.href = url; // fallback se popup bloccato
-        }
-      } else {
-        const mailMsg = encodeURIComponent(msg);
-        window.location.href = `mailto:wheredolocals@gmail.com?subject=&body=${mailMsg}`;
+        newWindow = window.open("", "_blank");
       }
-    }, 500); // 500ms è sufficiente per GA4
-  };
+
+      gtag("event", "form_contact", {
+        method: method,
+        experience: experience
+      });
+
+      const children = val("under-18");
+      const guestsLine = children === "0"
+        ? `Adults:        ${val("guest-picker")}`
+        : `Adults:        ${val("guest-picker")}  |  Children: ${children}`;
+
+      const lines = [
+        `Hello! I'd like to book: ${experience}.`,
+        ``,
+        `Name:          ${val("name-surname")}`,
+        `Host:          Palazzo Della Nave`,
+        `Service:       ${val("service-name")}`,
+        `Date:          ${val("date-picker")}`,
+        `Pick-up Time:  ${val("pick-up-time")}`,
+        `Pick-up:       ${val("pick-up-location")}`,
+        `Drop-off:      ${val("drop-off-location")}`,
+        guestsLine,
+      ];
+
+      const email       = val("email");
+      const phone       = val("phone");
+      const notes       = val("optional-request");
+
+      if (email)       lines.push(`Email:          ${email}`);
+      if (phone)       lines.push(`Phone:          ${phone}`);
+      if (notes)       lines.push(`Notes:          ${notes}`);
+
+      lines.push(``, `Looking forward to your reply!`);
+
+      const msg = lines.join('\n');
+
+      // Breve attesa per GA4, poi naviga
+      setTimeout(() => {
+        if (method === "whatsapp") {
+          const url = `https://wa.me/+393473119031?text=${encodeURIComponent(msg)}`;
+          if (newWindow) {
+            newWindow.location.href = url;
+          } else {
+            window.location.href = url; // fallback se popup bloccato
+          }
+        } else {
+          window.location.href = `mailto:wheredolocals@gmail.com?subject=${encodeURIComponent(experience)}&body=${encodeURIComponent(msg)}`;
+        }
+      }, 500);
+    };
   
 
-  // Gestione del bottone WhatsApp (submit del form)
-  document.getElementById("booking-form")
-    .addEventListener("submit", e => {
+    // Submit WhatsApp
+    document.getElementById("booking-form").addEventListener("submit", e => {
       e.preventDefault();
-      const form = e.target;
-
-      if (form.checkValidity()) {
+      if (e.target.checkValidity()) {
         sendMsg("whatsapp");
       } else {
-        form.reportValidity(); // Mostra messaggi di errore dei campi
+        e.target.reportValidity();
       }
     });
 
-  // Gestione del bottone email (click separato)
-  document.getElementById("submit-email")
-    .addEventListener("click", () => {
-      const form = document.getElementById("booking-form");
+    // Gestione del bottone email (click separato)
+    document.getElementById("submit-email")
+      .addEventListener("click", () => {
+        const form = document.getElementById("booking-form");
 
-      if (form.checkValidity()) {
-        sendMsg("email");
-      } else {
-        form.reportValidity(); // Mostra messaggi di errore dei campi
-      }
-    });
+        if (form.checkValidity()) {
+          sendMsg("email");
+        } else {
+          form.reportValidity(); // Mostra messaggi di errore dei campi
+        }
+      });
   }
 
   // === HEADER LOGO ===

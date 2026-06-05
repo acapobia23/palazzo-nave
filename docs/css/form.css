@@ -793,3 +793,86 @@ body[data-form-type="ship-package"] .description > h2 {
   text-align: center;
 }
 
+/* Time input overlay placeholder: keeps native time input but shows readable text */
+.time-input-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.time-input-wrapper input[type="time"] {
+  background: white;
+  position: relative;
+  z-index: 1;
+  padding-left: 16px; /* ensure space for placeholder */
+  color: transparent;
+}
+
+.time-input-wrapper input[type="time"]::-webkit-calendar-picker-indicator {
+  color: transparent;
+  background: transparent;
+}
+
+.time-placeholder {
+  position: absolute;
+  left: 16px;
+  top: 40%;
+  transform: translateY(-50%);
+  color: #888888;
+  pointer-events: none; /* allow taps to reach native input */
+  font-size: 15px;
+  z-index: 2;
+  font-family: 'Poppins', sans-serif;
+  display: block;
+  min-width: 100px;
+  min-height: 20px;
+  white-space: nowrap;
+}
+
+.time-input-wrapper.focused .time-placeholder,
+.time-input-wrapper.has-value .time-placeholder {
+  display: none;
+}
+
+.time-input-wrapper.has-value input[type="time"] {
+  color: black;
+}
+
+/* On very small screens make placeholder a bit smaller */
+@media (max-width: 400px) {
+  .time-placeholder { font-size: 13px; left: 12px; }
+}
+
+/* Children ages UI */
+.small-label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.children-ages {
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.children-note {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.child-age-row {
+  margin-bottom: 8px;
+}
+
+.child-age-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--c-main);
+  border-radius: 20px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+

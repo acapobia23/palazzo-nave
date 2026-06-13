@@ -1,6 +1,6 @@
 {
   "name": "Where Do Locals",
-  "short_name": "WDL",
+  "short_name": "WhereDoLocals",
   "description": "Your local guide to Florence",
   "start_url": "/",
   "display": "standalone",

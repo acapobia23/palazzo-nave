@@ -130,7 +130,7 @@ const sendMsg = method => {
       `Hello! I'm staying at Palazzo Della Nave I'd like to book this ${experience}.`,
       ``,
       `Name:  ${val("main-guest")}`,
-      `Host:  Palazzo Della Nave`,
+      
       `Adults: ${val("guest-picker")}`,
       `Minors: ${val("under-18")}`,
       `Email: ${val("email")}`,

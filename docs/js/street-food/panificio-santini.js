@@ -119,7 +119,7 @@ const sendMsg = method => {
       `Hello! I'd like to know more about ${experience}.`,
       ``,
     `Name:  ${val("main-guest")}`,
-    `Host:  Palazzo Della Nave`,
+    
       `Email: ${val("email")}`,
       `Phone: ${val("phone")}`,
     ];

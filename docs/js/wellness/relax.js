@@ -131,7 +131,7 @@ const sendMsg = method => {
       ``,
       `Date:  ${val("date-picker")}`,
     `Name:  ${val("main-guest")}`,
-    `Host:  Palazzo Della Nave`,
+    
       `Adults: ${val("guest-picker")}`,
       `Minors: ${val("under-18")}`,
       `Email: ${val("email")}`,

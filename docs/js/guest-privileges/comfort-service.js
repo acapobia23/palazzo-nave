@@ -159,7 +159,7 @@ const sendMsg = method => {
         }
       } else {
         const mailMsg = encodeURIComponent(msg);
-        window.location.href = `mailto:wheredolocals@gmail.com?subject=&body=${mailMsg}`;
+        window.location.href = `mailto:hello@palazzodellanave.com?subject=&body=${mailMsg}`;
       }
     }, 500); // 500ms è sufficiente per GA4
   };

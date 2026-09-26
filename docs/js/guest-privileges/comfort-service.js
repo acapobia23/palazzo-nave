@@ -151,7 +151,7 @@ const sendMsg = method => {
     // 🔹 Aspetta GA4, poi naviga
     setTimeout(() => {
       if (method === "whatsapp") {
-        const url = `https://wa.me/+393473119031?text=${encodeURIComponent(msg)}`;
+        const url = `https://wa.me/+393339232292?text=${encodeURIComponent(msg)}`;
         if (newWindow) {
           newWindow.location.href = url;
         } else {
